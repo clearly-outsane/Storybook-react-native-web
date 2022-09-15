@@ -13,5 +13,5 @@ export const Basic: ComponentStory<typeof ButtonRN> = args => (
 
 Basic.args = {
   text: 'Hello World',
-  color: 'purple',
+  color: 'red',
 };
