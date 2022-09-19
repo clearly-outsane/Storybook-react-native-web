@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { View, ViewStyle, StyleSheet, StyleProp, Platform } from 'react-native';
+import {View, ViewStyle, StyleSheet, StyleProp, Platform} from 'react-native';
 import DefaultTheme from '../../styles/DefaultTheme';
 import Text from '../Typography/Text';
-import type { Theme } from '../../types';
+import type {Theme} from '../../types';
 import Modal from './Modal';
-import { colors } from '../../styles/tokens';
-import { withTheme } from '../../core/theming';
+import {colors} from '../../styles/tokens';
+import {withTheme} from '../../core/theming';
 import IconButton from '../IconButton/IconButton';
 import Button from '../Button';
 
@@ -59,9 +59,15 @@ const MessageModal = ({
       style,
     ]}
   >
-    <View style={{ flexDirection: 'column' }}>
+    <View style={{flexDirection: 'column'}}>
       <View style={[styles.modalHeader]}>
-        <Text style={[{ ...theme.fonts.bold }]} variant="Body">
+        <Text
+          style={[
+            {...theme.fonts.bold},
+            Platform.OS === 'web' && {fontFamily: 'Inter'},
+          ]}
+          variant="Body"
+        >
           {title}
         </Text>
         <IconButton
@@ -93,6 +99,7 @@ const styles = StyleSheet.create({
     elevation: 24,
     justifyContent: 'flex-start',
     padding: 24,
+    width: 420,
   },
   innerContainer: {},
   modalHeader: {
@@ -103,7 +110,7 @@ const styles = StyleSheet.create({
 
     paddingBottom: 16,
   },
-  footer: { paddingVertical: 16 },
+  footer: {paddingVertical: 16},
 });
 
 export default withTheme(MessageModal);

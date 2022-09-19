@@ -2,22 +2,21 @@ import {ComponentStory} from '@storybook/react';
 import React from 'react';
 import {View} from 'react-native';
 import {DefaultTheme} from '../src';
-import Button from '../src/components/Button';
+import Breadcrumbs from '../src/components/Breadcrumbs/Breadcrumbs';
+import Checkbox from '../src/components/Checkbox/Checkbox';
 import {colors} from '../src/styles/tokens';
+import {useArgs} from '@storybook/client-api';
+import Chip from '../src/components/Chip/Chip';
 
 export default {
-  title: 'Components/Button',
-  component: Button,
-
+  title: 'Components/Chip',
+  component: Chip,
   argTypes: {
     mode: {
       control: {
         type: 'select',
       },
-      options: ['contained', 'outlined'],
-    },
-    onClick: {
-      action: 'clicked',
+      options: ['flat', 'outlined'],
     },
     color: {
       control: {
@@ -37,28 +36,25 @@ export default {
   },
 };
 
-// Other Avatar stories
-
 /*
  * New story using Controls
  * Read more about Storybook templates at:
  * https://storybook.js.org/docs/react/writing-stories/introduction#using-args
  */
-const Template: ComponentStory<typeof Button> = args => (
+const Template: ComponentStory<typeof Breadcrumbs> = args => (
   <View style={{alignItems: 'start'}}>
-    <Button {...args}> {args.text}</Button>
+    <Chip textStyle={{fontFamily: 'Inter', fontWeight: 700}} {...args}>
+      {args.text}
+    </Chip>
   </View>
 );
 
-export const Large = Template.bind({});
+export const Default = Template.bind({});
 /*
  * More on args at:
  * https://storybook.js.org/docs/react/writing-stories/args
  */
-Large.args = {
-  loading: false,
-  mode: 'contained',
-  text: 'Click me',
-  labelStyle: {fontFamily: 'Inter'},
-  disabled: false,
+Default.args = {
+  mode: 'flat',
+  text: 'Primary',
 };

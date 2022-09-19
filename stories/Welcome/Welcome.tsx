@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {View} from 'react-native';
-import {withTheme} from '../src/index';
-import Text from '../src/components/Typography/Text';
+import {withTheme} from '../../src/index';
+import Text from '../../src/components/Typography/Text';
 
 class Welcome extends React.Component {
   styles = {
@@ -29,10 +29,10 @@ class Welcome extends React.Component {
           style={{
             ...this.styles.header,
             color: this.props.theme.colors.primary.default,
-            fontFamily: 'Inter-SemiBold',
+            fontFamily: 'Inter',
           }}
         >
-          Welcome to React Native Storybook
+          Using the Theme Provider
         </Text>
         <Text style={this.styles.content}>
           This is a UI Component development environment for your React Native

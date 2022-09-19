@@ -1834,7 +1834,7 @@
 
 "@react-native-masked-view/masked-view@^0.2.7":
   version "0.2.7"
-  resolved "https://registry.npmjs.org/@react-native-masked-view/masked-view/-/masked-view-0.2.7.tgz"
+  resolved "https://registry.yarnpkg.com/@react-native-masked-view/masked-view/-/masked-view-0.2.7.tgz#d19f1fc646df9440c23c834b4ff3f2b8fe15e175"
   integrity sha512-ME+egr2l25rkcIJjFoXQUWWlfkJMY2KHdhf/df2ZXbVdVx5HIeTPpJpjKTZOPttLFtmrtHpzsqK1/dmu8F755g==
 
 "@react-native/assets@1.0.0":
@@ -2121,9 +2121,9 @@
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
-"@storybook/api@6.5.12":
+"@storybook/api@6.5.12", "@storybook/api@^6.5.12":
   version "6.5.12"
-  resolved "https://registry.npmjs.org/@storybook/api/-/api-6.5.12.tgz"
+  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.5.12.tgz#7cc82087fc9298be03f15bf4ab9c4aab294b3bac"
   integrity sha512-DuUZmMlQxkFNU9Vgkp9aNfCkAongU76VVmygvCuSpMVDI9HQ2lG0ydL+ppL4XKoSMCCoXTY6+rg4hJANnH+1AQ==
   dependencies:
     "@storybook/channels" "6.5.12"
@@ -2820,6 +2820,25 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/color-convert@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-2.0.0.tgz#8f5ee6b9e863dcbee5703f5a517ffb13d3ea4e22"
+  integrity sha512-m7GG7IKKGuJUXvkZ1qqG3ChccdIM/qBBo913z+Xft0nKCX4hAU/IxKwZBU4cpRZ7GS5kV4vOblUkILtSShCPXQ==
+  dependencies:
+    "@types/color-name" "*"
+
+"@types/color-name@*":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
+  integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
+
+"@types/color@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@types/color/-/color-3.0.3.tgz#e6d8d72b7aaef4bb9fe80847c26c7c786191016d"
+  integrity sha512-X//qzJ3d3Zj82J9sC/C18ZY5f43utPbAJ6PhYt/M7uG6etcF6MRpKdN880KBy43B0BMzSfeT96MzrsNjFI3GbA==
+  dependencies:
+    "@types/color-convert" "*"
+
 "@types/eslint-scope@^3.7.3":
   version "3.7.4"
   resolved "https://registry.npmjs.org/@types/eslint-scope/-/eslint-scope-3.7.4.tgz"
@@ -2997,6 +3016,21 @@
   version "6.9.7"
   resolved "https://registry.npmjs.org/@types/qs/-/qs-6.9.7.tgz"
   integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
+
+"@types/react-native-vector-icons@^6.4.12":
+  version "6.4.12"
+  resolved "https://registry.yarnpkg.com/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.12.tgz#4b9c63bf85eb42fca7c5b0a55ec317900e4fb427"
+  integrity sha512-gSXtv3NMOsRwSXJ/gvGebm7CNjHbkeFKCse9h/Pvi+x2yjCLOkJR1FBfec06DhaFJpsK7Y8WRQpwOS0eLqx5Rg==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
+
+"@types/react-native@*":
+  version "0.70.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.70.1.tgz#462008dcf39354b0bd0383daa236980187138d02"
+  integrity sha512-lra6klJfSKLKT2J8HQXzLgiKlQuzyjEKgaVjZZO8d/ew7lIw6JIwM58ob17uR4J5ZVU+J2a+BqefXsVqdHRrOA==
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-native@^0.70.0":
   version "0.70.0"
@@ -10727,7 +10761,7 @@ react-native-mask-input@^1.2.1:
 
 react-native-vector-icons@^9.2.0:
   version "9.2.0"
-  resolved "https://registry.npmjs.org/react-native-vector-icons/-/react-native-vector-icons-9.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-9.2.0.tgz#3c0c82e95defd274d56363cbe8fead8d53167ebd"
   integrity sha512-wKYLaFuQST/chH3AJRjmOLoLy3JEs1JR6zMNgTaemFpNoXs0ztRnTxcxFD9xhX7cJe1/zoN5BpQYe7kL0m5yyA==
   dependencies:
     prop-types "^15.7.2"

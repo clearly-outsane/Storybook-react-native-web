@@ -6,6 +6,7 @@ import {
   StyleSheet,
   StyleProp,
   TextStyle,
+  Platform,
 } from 'react-native';
 import color from 'color';
 
@@ -14,8 +15,8 @@ import ActivityIndicator from './ActivityIndicator';
 import Surface from './Surface';
 import Text from './Typography/Text';
 import TouchableRipple from './TouchableRipple/TouchableRipple.native';
-import { colors as Colors } from '../styles/tokens';
-import { withTheme } from '../core/theming';
+import {colors as Colors} from '../styles/tokens';
+import {withTheme} from '../core/theming';
 
 type Props = React.ComponentProps<typeof Surface> & {
   /**
@@ -105,8 +106,14 @@ const Button = ({
   mt = 0,
   ...rest
 }: Props) => {
-  const { current: elevation } = React.useRef<Animated.Value>(
-    new Animated.Value(disabled || mode !== 'contained' ? 0 : 2)
+  React.useEffect(() => {
+    console.log(theme.colors);
+
+    return () => {};
+  }, []);
+
+  const {current: elevation} = React.useRef<Animated.Value>(
+    new Animated.Value(disabled || mode !== 'contained' ? 0 : 2),
   );
   React.useEffect(() => {
     elevation.setValue(disabled || mode !== 'contained' ? 0 : 2);
@@ -118,7 +125,7 @@ const Button = ({
 
   const handlePressIn = () => {
     if (mode === 'contained') {
-      const { scale } = theme.animation;
+      const {scale} = theme.animation;
       Animated.timing(elevation, {
         toValue: 8,
         duration: 200 * scale,
@@ -129,7 +136,7 @@ const Button = ({
 
   const handlePressOut = () => {
     if (mode === 'contained') {
-      const { scale } = theme.animation;
+      const {scale} = theme.animation;
       Animated.timing(elevation, {
         toValue: 2,
         duration: 150 * scale,
@@ -138,7 +145,7 @@ const Button = ({
     }
   };
 
-  const { colors, roundness } = theme;
+  const {colors, roundness} = theme;
   const font = theme.fonts.medium;
 
   let backgroundColor: string,
@@ -194,10 +201,10 @@ const Button = ({
       : roundness,
   };
 
-  const { color: customLabelColor, fontSize: customLabelSize } =
+  const {color: customLabelColor, fontSize: customLabelSize} =
     StyleSheet.flatten(labelStyle) || {};
 
-  const textStyle = { color: textColor, ...font };
+  const textStyle = {color: textColor, ...font};
   const iconStyle =
     StyleSheet.flatten(contentStyle)?.flexDirection === 'row-reverse'
       ? styles.iconReverse
@@ -206,14 +213,7 @@ const Button = ({
   return (
     <Surface
       {...rest}
-      style={[
-        styles.button,
-
-        { elevation },
-        buttonStyle,
-        style,
-        { marginTop: mt },
-      ]}
+      style={[styles.button, {elevation}, buttonStyle, style, {marginTop: mt}]}
     >
       <TouchableRipple
         borderless
@@ -227,7 +227,7 @@ const Button = ({
         accessibilityTraits={disabled ? ['button', 'disabled'] : 'button'}
         accessibilityComponentType="button"
         accessibilityRole="button"
-        accessibilityState={{ disabled }}
+        accessibilityState={{disabled}}
         accessible={accessible}
         disabled={disabled}
         rippleColor={rippleColor}
@@ -262,7 +262,13 @@ const Button = ({
           <Text
             selectable={false}
             numberOfLines={1}
-            style={[styles.label, textStyle, font, labelStyle]}
+            style={[
+              styles.label,
+              textStyle,
+              font,
+              labelStyle,
+              Platform.OS === 'web' && {fontFamily: 'Inter'},
+            ]}
           >
             {children}
           </Text>

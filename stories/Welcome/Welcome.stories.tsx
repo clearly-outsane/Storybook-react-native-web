@@ -7,9 +7,7 @@ export default {
   title: 'Components/Welcome',
   component: Welcome,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    backgroundColor: {control: 'color'},
-  },
+  argTypes: {},
 } as ComponentMeta<typeof Welcome>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
