@@ -48,7 +48,6 @@ const Template: ComponentStory<typeof Breadcrumbs> = args => {
         }}
         status={checked ? 'checked' : 'unchecked'}
       />
-      <Icon name={'minus-box'} size={24} allowFontScaling={false} />
     </>
   );
 };
