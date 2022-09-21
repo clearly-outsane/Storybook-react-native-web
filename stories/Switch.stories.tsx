@@ -6,7 +6,8 @@ import {DefaultTheme} from '../src';
 import Button from '../src/components/Button';
 import RadioButton from '../src/components/Radio';
 import Switch from '../src/components/Switch/Switch';
-import Text from '../src/components/Text';
+import Text from '../src/components/Typography/Text';
+
 import {colors} from '../src/styles/tokens';
 
 export default {
@@ -37,7 +38,19 @@ const Template: ComponentStory<typeof Switch> = args => {
     updateArgs({value: !isSwitchOn});
     setIsSwitchOn(!isSwitchOn);
   };
-  return <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />;
+  return (
+    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+      <View style={{flexDirection: 'column', maxWidth: 220, marginRight: 16}}>
+        <Text variant="Caption" style={{fontWeight: 700}}>
+          {args.Label}
+        </Text>
+        <Text variant="XSmall" style={{color: DefaultTheme.colors.fg.subtle}}>
+          {args.description}
+        </Text>
+      </View>
+      <Switch value={isSwitchOn} onValueChange={onToggleSwitch} />
+    </View>
+  );
 };
 
 export const Default = Template.bind({});
@@ -45,4 +58,8 @@ export const Default = Template.bind({});
  * More on args at:
  * https://storybook.js.org/docs/react/writing-stories/args
  */
-Default.args = {value: true};
+Default.args = {
+  value: true,
+  Label: 'Label',
+  description: 'By submitting this form you agree to our terms. View Terms.',
+};
