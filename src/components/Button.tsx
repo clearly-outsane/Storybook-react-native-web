@@ -126,22 +126,22 @@ const Button = ({
   const handlePressIn = () => {
     if (mode === 'contained') {
       const {scale} = theme.animation;
-      Animated.timing(elevation, {
-        toValue: 8,
-        duration: 200 * scale,
-        useNativeDriver: true,
-      }).start();
+      // Animated.timing(elevation, {
+      //   toValue: 8,
+      //   duration: 200 * scale,
+      //   useNativeDriver: true,
+      // }).start();
     }
   };
 
   const handlePressOut = () => {
     if (mode === 'contained') {
       const {scale} = theme.animation;
-      Animated.timing(elevation, {
-        toValue: 2,
-        duration: 150 * scale,
-        useNativeDriver: true,
-      }).start();
+      // Animated.timing(elevation, {
+      //   toValue: 2,
+      //   duration: 150 * scale,
+      //   useNativeDriver: true,
+      // }).start();
     }
   };
 

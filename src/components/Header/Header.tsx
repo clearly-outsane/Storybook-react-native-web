@@ -98,7 +98,7 @@ const Header = ({
               {
                 color: titleColor,
                 ...fonts.bold,
-                marginLeft: 8,
+                marginLeft: 32,
                 textAlign: centerText ? 'center' : 'left',
               },
               styles.title,
@@ -119,7 +119,7 @@ const Header = ({
             })}
         </View>
       </Surface>
-      <View style={{paddingLeft: 54}}>
+      <View style={{paddingLeft: 78}}>
         <Breadcrumbs
           breadcrumbs={breadcrumbs}
           breadcrumb_labels={breadcrumb_labels}
